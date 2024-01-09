@@ -33,4 +33,9 @@ jobs:
           STATE_BUCKET: ${{ secrets.TF_BUCKET }}
       - run: terraform -chdir=terraform/ plan
       - run: terraform -chdir=terraform/ apply -auto-approve
+      - run: |
+          terraform -chdir=terraform/ output -raw inventory > ansible/inventory
+          cat ansible/inventory
+          tail -n +2 ansible/inventory > ansible/inventory.ini
+          cat ansible/inventory.ini
 
