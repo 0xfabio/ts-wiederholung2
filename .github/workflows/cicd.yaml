@@ -10,3 +10,11 @@ jobs:
         uses: actions/checkout@v4
       - name: List file in repo
         run: ls ${{ github.workspace }}
+      # Install the deps
+      - id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+      - name: check if aws cli is installed
+        run: |
+          aws --version
+
+          
