@@ -32,4 +32,5 @@ jobs:
         env:
           STATE_BUCKET: ${{ secrets.TF_BUCKET }}
       - run: terraform -chdir=terraform/ plan
+      - run: terraform -chdir=terraform/ apply -auto-approve
 
