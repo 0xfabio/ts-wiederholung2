@@ -16,6 +16,6 @@ jobs:
       - name: check if aws cli is installed
         run: |
           aws --version
-      # - name: install terraform
-      #   uses: hashicorp/setup-terraform@v2
+      - name: install terraform
+        uses: hashicorp/setup-terraform@v2
       - run: terraform version
